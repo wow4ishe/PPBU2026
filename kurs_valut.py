@@ -4,7 +4,7 @@ from tkinter import ttk, messagebox
 
 URL = "https://open.er-api.com/v6/latest/"
 
-# Словарь: код валюты -> её название
+
 CURRENCIES = {
     "RUB": "Российский рубль",
     "USD": "Американский доллар",
@@ -49,12 +49,12 @@ def exchange():
     label_base2.config(text=f"{CURRENCIES.get(base2, base2)}: 1 {base2} = {rate2:.4f} {target}")
 
 
-# --- Окно ---
+
 window = tk.Tk()
 window.title("Курсы обмена валют")
 window.geometry("400x380")
 
-# Первая базовая валюта
+
 label_title1 = tk.Label(window, text="Базовая валюта")
 label_title1.pack()
 combo_base1 = ttk.Combobox(window, values=list(CURRENCIES.keys()))
@@ -63,7 +63,7 @@ combo_base1.pack(pady=5)
 label_base1 = tk.Label(window, text="")
 label_base1.pack(pady=5)
 
-# Вторая базовая валюта
+
 label_title2 = tk.Label(window, text="Вторая базовая валюта")
 label_title2.pack()
 combo_base2 = ttk.Combobox(window, values=list(CURRENCIES.keys()))
@@ -72,14 +72,14 @@ combo_base2.pack(pady=5)
 label_base2 = tk.Label(window, text="")
 label_base2.pack(pady=5)
 
-# Целевая валюта
+
 label_title3 = tk.Label(window, text="Целевая валюта")
 label_title3.pack()
 combo_target = ttk.Combobox(window, values=list(CURRENCIES.keys()))
 combo_target.set("RUB")
 combo_target.pack(pady=5)
 
-# Кнопка
+
 button = tk.Button(window, text="Получить курс обмена", command=exchange)
 button.pack(pady=10)
 
